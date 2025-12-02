@@ -17,3 +17,11 @@ function createCubes(numOfCubes, parent) {
 }
 
 createRows(16);
+
+const cubes = document.querySelectorAll(".cube");
+
+cubes.forEach(cube => {
+  cube.addEventListener('mouseover', () => {
+    cube.style.backgroundColor = "black";
+  })
+})
