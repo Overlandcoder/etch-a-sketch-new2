@@ -5,6 +5,8 @@ createRows(16);
 
 btn.addEventListener('click', () => {
   let gridSize = prompt("How many squares per side?", '');
+  if (!gridSize) return;
+  
   createRows(gridSize, true);
 })
 
