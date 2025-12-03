@@ -1,22 +1,24 @@
 const grid = document.querySelector(".grid");
+let gridSize = prompt("How many squares per side?", '');
 
-function createRows(numOfRows) {
-  for (let i = 0; i < numOfRows; i++) {
+function createRows() {
+  for (let i = 0; i < gridSize; i++) {
     const row = document.createElement("div");
-    createCubes(16, row);
+    createCubes(row);
+    row.classList.add("row");
     grid.appendChild(row);
   }
 }
 
-function createCubes(numOfCubes, parent) {
-  for (let i = 0; i < numOfCubes; i++) {
+function createCubes(parent) {
+  for (let i = 0; i < gridSize; i++) {
     cube = document.createElement("div");
     cube.classList.add("cube")
     parent.appendChild(cube);
   }
 }
 
-createRows(16);
+createRows();
 
 const cubes = document.querySelectorAll(".cube");
 
