@@ -17,3 +17,10 @@
   border: 1px solid #00000057;
   flex: 1;
 }
+
+.btn {
+  display: flex;
+  margin: 20px auto;
+  padding: 5px 10px;
+  justify-content: center;
+}

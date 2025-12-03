@@ -1,16 +1,27 @@
 const grid = document.querySelector(".grid");
-let gridSize = prompt("How many squares per side?", '');
+const btn = document.querySelector(".btn");
 
-function createRows() {
+createRows(16);
+
+btn.addEventListener('click', () => {
+  let gridSize = prompt("How many squares per side?", '');
+  createRows(gridSize, true);
+})
+
+function createRows(gridSize, resetting = false) {
+  if (resetting) grid.replaceChildren();
+
   for (let i = 0; i < gridSize; i++) {
     const row = document.createElement("div");
-    createCubes(row);
+    createCubes(gridSize, row);
     row.classList.add("row");
     grid.appendChild(row);
   }
+  
+  addListeners();
 }
 
-function createCubes(parent) {
+function createCubes(gridSize, parent) {
   for (let i = 0; i < gridSize; i++) {
     cube = document.createElement("div");
     cube.classList.add("cube")
@@ -18,12 +29,12 @@ function createCubes(parent) {
   }
 }
 
-createRows();
+function addListeners() {
+  const cubes = document.querySelectorAll(".cube");
 
-const cubes = document.querySelectorAll(".cube");
-
-cubes.forEach(cube => {
-  cube.addEventListener('mouseover', () => {
-    cube.style.backgroundColor = "black";
+  cubes.forEach(cube => {
+    cube.addEventListener('mouseover', () => {
+      cube.style.backgroundColor = "black";
+    })
   })
-})
+}
