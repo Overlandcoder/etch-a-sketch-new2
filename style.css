@@ -1,14 +1,19 @@
 .grid {
   display: flex;
-  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 600px;
+  width: 600px;
+  margin: 20px auto;
 }
 
 .row {
-
+  flex: 1;
+  display: flex;
+  width: 100%;
 }
 
 .cube {
   border: 1px solid #00000057;
-  width: 30px;
-  height: 30px;
+  flex: 1;
 }
